@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Add from "./pages/Add";
 import Vote from "./pages/Vote";
 import Result from "./pages/Result";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Router>
         <Header></Header>
 
-        <main>
+        <main className="main">
           <Switch>
             <Route path="/Home">
               <Home />
