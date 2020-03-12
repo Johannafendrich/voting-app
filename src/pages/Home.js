@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
 
 function Home() {
   return (
-    <div>
+    <Card>
       <p>Home</p>
       <Link to="/Add">Add</Link>
-    </div>
+    </Card>
   );
 }
 export default Home;
