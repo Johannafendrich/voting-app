@@ -10,28 +10,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <Router>
-        <Header></Header>
+    <Router>
+      <Header />
 
-        <main className="main">
-          <Switch>
-            <Route path="/Home">
-              <Home />
-            </Route>
-            <Route path="/Add">
-              <Add />
-            </Route>
-            <Route path="/Vote">
-              <Vote />
-            </Route>
-            <Route path="/Result">
-              <Result />
-            </Route>
-          </Switch>
-        </main>
-      </Router>
-    </>
+      <main className="main">
+        <Switch>
+          <Route path="/Home">
+            <Home />
+          </Route>
+          <Route path="/Add">
+            <Add />
+          </Route>
+          <Route path="/Vote">
+            <Vote />
+          </Route>
+          <Route path="/Result">
+            <Result />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
   );
 }
 
