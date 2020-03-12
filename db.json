@@ -1,0 +1,25 @@
+{
+  "polls": [
+    {
+      "question": "How are you?",
+      "answerOne": "Fine",
+      "answerTwo": "Great",
+      "answerThree": "Awesome",
+      "id": 1
+    },
+    {
+      "question": "Where you want to go?",
+      "firstAnswer": "L.A.",
+      "secondAnswer": "Sydney",
+      "thirdAnswer": "Cologne",
+      "id": 2
+    },
+    {
+      "question": "Hungry?",
+      "firstAnswer": "Yes",
+      "secondAnswer": "No",
+      "thirdAnswer": "Always",
+      "id": 3
+    }
+  ]
+}

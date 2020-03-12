@@ -10,16 +10,26 @@ function Add() {
   const [secondAnswer, setSecondAnswer] = React.useState("");
   const [thirdAnswer, setThirdAnswer] = React.useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    alert(JSON.stringify(poll));
+
+    const poll = {
+      question: question,
+      firstAnswer: firstAnswer,
+      secondAnswer: secondAnswer,
+      thirdAnswer: thirdAnswer
+    };
+
+    const response = await fetch("http://localhost:4000/polls", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(poll)
+    });
+    const createdPoll = await response.json();
+    alert(`Created poll with the id ${createdPoll.id}`);
   }
-  const poll = {
-    question: question,
-    firstAnswer: firstAnswer,
-    secondAnswer: secondAnswer,
-    thirdAnswer: thirdAnswer
-  };
 
   return (
     <Card>
