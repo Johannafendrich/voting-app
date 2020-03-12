@@ -27,13 +27,6 @@
       "answerTwo": "Great",
       "answerThree": "Awesome",
       "id": 4
-    },
-    {
-      "question": "How are you?",
-      "answerOne": "Fine",
-      "answerTwo": "Great",
-      "answerThree": "Awesome",
-      "id": 5
     }
   ]
 }
