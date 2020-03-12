@@ -1,12 +1,12 @@
-import React from "react";
-import Header from "./components/Header";
-import "./App.css";
-import Home from "./pages/Home";
-import Add from "./pages/Add";
-import Vote from "./pages/Vote";
-import Result from "./pages/Result";
+import React from 'react';
+import Header from './components/Header';
+import './App.css';
+import Home from './pages/Home';
+import Add from './pages/Add';
+import Vote from './pages/Vote';
+import Result from './pages/Result';
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
