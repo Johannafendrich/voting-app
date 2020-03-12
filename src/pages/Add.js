@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import "./Add.css";
+import Button from "../components/Button";
 
 function Add() {
   return (
@@ -27,6 +28,7 @@ function Add() {
           type="text"
           placeholder="Fill in your third choice"
         />
+        <Button>Create your Poll</Button>
       </form>
       <Link to="/Vote">Vote</Link>
     </Card>
