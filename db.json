@@ -1,6 +1,5 @@
 {
   "polls": [
-
     {
       "question": "How are you?",
       "answerOne": "Fine",
@@ -21,7 +20,6 @@
       "secondAnswer": "No",
       "thirdAnswer": "Always",
       "id": 3
-
     }
   ]
 }

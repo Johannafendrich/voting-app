@@ -1,17 +1,14 @@
-
-
-import React from "react";
-import { Link } from "react-router-dom";
-import Card from "../components/Card";
-import "./Add.css";
-import Button from "../components/Button";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Card from '../components/Card';
+import './Add.css';
+import Button from '../components/Button';
 
 function Add() {
-  const [question, setQuestion] = React.useState("");
-  const [firstAnswer, setFirstAnswer] = React.useState("");
-  const [secondAnswer, setSecondAnswer] = React.useState("");
-  const [thirdAnswer, setThirdAnswer] = React.useState("");
+  const [question, setQuestion] = React.useState('');
+  const [firstAnswer, setFirstAnswer] = React.useState('');
+  const [secondAnswer, setSecondAnswer] = React.useState('');
+  const [thirdAnswer, setThirdAnswer] = React.useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -25,12 +22,12 @@ function Add() {
 
     const response = await fetch(
       process.env.REACT_APP_POLLS_API ||
-        "https://my-json-server.typicode.com/Johannafendrich/voting-app",
+        'https://my-json-server.typicode.com/Johannafendrich/voting-app',
 
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(poll)
       }
