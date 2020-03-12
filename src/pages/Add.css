@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.form ::placeholder {
+  color: white;
+}
+.form__input {
+  width: 100%;
+  margin: 10px;
+  color: white;
+  background: none;
+  border: none;
+  text-transform: white;
+}
+
+.form__input-question {
+  border-bottom: 1px solid white;
+  padding: 6px 10px;
+  margin-bottom: 80px;
+}
+
+.form__input-answer {
+  border-bottom: 1px solid white;
+  padding: 6px 10px;
+}
