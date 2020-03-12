@@ -1,7 +1,7 @@
 {
   "polls": [
-    {
 
+    {
       "question": "How are you?",
       "answerOne": "Fine",
       "answerTwo": "Great",
@@ -21,6 +21,7 @@
       "secondAnswer": "No",
       "thirdAnswer": "Always",
       "id": 3
+
     }
   ]
 }
