@@ -20,6 +20,13 @@
       "secondAnswer": "No",
       "thirdAnswer": "Always",
       "id": 3
+    },
+    {
+      "question": "what are you doing?",
+      "answerOne": "Nothing",
+      "answerTwo": "Working",
+      "answerThree": "Voting",
+      "id": 4
     }
   ]
 }

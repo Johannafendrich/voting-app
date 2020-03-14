@@ -22,7 +22,7 @@ function Add() {
 
     const response = await fetch(
       process.env.REACT_APP_POLLS_API ||
-        'https://my-json-server.typicode.com/Johannafendrich/voting-app',
+        'https://my-json-server.typicode.com/Johannafendrich/voting-app/polls',
 
       {
         method: 'POST',

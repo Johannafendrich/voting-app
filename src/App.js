@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Add from './pages/Add';
 import Vote from './pages/Vote';
 import Result from './pages/Result';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -18,13 +17,13 @@ function App() {
           <Route path="/Home">
             <Home />
           </Route>
-          <Route path="/Add">
+          <Route exact path="/">
             <Add />
           </Route>
           <Route path="/Vote">
             <Vote />
           </Route>
-          <Route path="/Result">
+          <Route path="/polls/:pollId">
             <Result />
           </Route>
         </Switch>
