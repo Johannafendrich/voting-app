@@ -75,9 +75,10 @@ function Add() {
             setThirdAnswer(event.target.value);
           }}
         />
-        <Button>Create your Poll</Button>
+        <Button>
+          <Link to="/polls/:pollId/Vote">Submit your Poll</Link>
+        </Button>
       </form>
-      <Link to="/Vote">Vote</Link>
     </Card>
   );
 }

@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import './Result.css';
+import Button from '../components/Button';
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
@@ -27,6 +29,9 @@ function Result() {
       <div className="answers">{poll?.firstAnswer}</div>
       <div className="answers">{poll?.secondAnswer}</div>
       <div className="answers">{poll?.thirdAnswer}</div>
+      <Button>
+        <Link to="/Add">Create new Vote</Link>
+      </Button>
     </Card>
   );
 }
