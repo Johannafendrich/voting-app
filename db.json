@@ -2,9 +2,9 @@
   "polls": [
     {
       "question": "How are you?",
-      "answerOne": "Fine",
-      "answerTwo": "Great",
-      "answerThree": "Awesome",
+      "firstAnswer": "Fine",
+      "secondAnswer": "Great",
+      "thirdAnswer": "Awesome",
       "id": 1
     },
     {
@@ -20,6 +20,13 @@
       "secondAnswer": "No",
       "thirdAnswer": "Always",
       "id": 3
+    },
+    {
+      "question": "what are you doing?",
+      "firstAnswer": "Nothing",
+      "secondAnswer": "Working",
+      "thirdAnswer": "Voting",
+      "id": 4
     }
   ]
 }
