@@ -14,16 +14,16 @@ function App() {
 
       <main className="main">
         <Switch>
-          <Route path="/Home">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/Add">
             <Add />
           </Route>
-          <Route path="/Vote">
+          <Route exact path="/polls/:pollId/Vote">
             <Vote />
           </Route>
-          <Route path="/polls/:pollId">
+          <Route exact path="/polls/:pollId">
             <Result />
           </Route>
         </Switch>
