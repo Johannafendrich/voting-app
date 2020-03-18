@@ -1,39 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import styled from '@emotion/styled';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Form from '../components/Form';
-
-const Input = styled.input`
-  margin-bottom: 10px;
-`;
-
-const QuestionInput = styled(Input)`
-  border-bottom: 1px solid white;
-  border: none;
-  padding: 6px 10px;
-  margin: 10px;
-  color: white;
-  background: none;
-  text-transform: uppercase;
-  &::placeholder {
-    color: white;
-  }
-`;
-
-const AnswerInput = styled(Input)`
-  border-bottom: 1px solid white;
-  border: none;
-  padding: 6px 10px;
-  background: none;
-  border-bottom: 1px solid white;
-  border-radius: 20px;
-  &::placeholder {
-    color: white;
-  }
-`;
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
@@ -49,17 +19,31 @@ function Result() {
       const poll = await response.json();
       setPoll(poll);
     }
-
     getPoll();
   }, [pollId]);
+
+  const firstAnswerVotes = poll?.votes.filter(vote => vote === 'firstAnswer')
+    .length;
+  const secondAnswerVotes = poll?.votes.filter(vote => vote === 'secondAnswer')
+    .length;
+  const thirdAnswerVotes = poll?.votes.filter(vote => vote === 'thirdAnswer')
+    .length;
 
   return (
     <Card>
       <Form>
-        <h2>{poll?.question}</h2>
-        <QuestionInput>{poll?.firstAnswer}</QuestionInput>
-        <AnswerInput>{poll?.secondAnswer}</AnswerInput>
-        <AnswerInput>{poll?.thirdAnswer}</AnswerInput>
+        <h2>
+          {poll?.question} ({poll?.votes.length} votes)
+        </h2>
+        <div>
+          {poll?.firstAnswer} ({firstAnswerVotes} votes)
+        </div>
+        <div>
+          {poll?.secondAnswer} ({secondAnswerVotes} votes)
+        </div>
+        <div>
+          {poll?.thirdAnswer} ({thirdAnswerVotes} votes)
+        </div>
         <Button>
           <Link to="/Add">Create new Vote</Link>
         </Button>

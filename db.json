@@ -6,7 +6,11 @@
       "secondAnswer": "Great",
       "thirdAnswer": "Awesome",
       "id": 1,
-      "votes": ["firstAnswer", "secondAnswer", "thirdAnswer"]
+      "votes": [
+        "firstAnswer",
+        "secondAnswer",
+        "thirdAnswer"
+      ]
     },
     {
       "question": "Where you want to go?",
@@ -31,6 +35,76 @@
       "thirdAnswer": "Voting",
       "id": 4,
       "votes": []
+    },
+    {
+      "question": "",
+      "firstAnswer": "sdfsdf",
+      "secondAnswer": "sdfsd",
+      "thirdAnswer": "sdfs",
+      "votes": [
+        null
+      ],
+      "id": 5
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 6
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 7
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 8
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 9
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 10
+    },
+    {
+      "question": "",
+      "firstAnswer": "",
+      "secondAnswer": "",
+      "thirdAnswer": "",
+      "votes": [
+        null
+      ],
+      "id": 11
     }
   ]
 }
