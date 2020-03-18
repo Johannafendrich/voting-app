@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import styled from '@emotion/styled';
 import Button from '../components/Button';
 import Form from '../components/Form';
+import { useHistory } from 'react-router-dom';
 
 const Input = styled.input`
   margin-bottom: 10px;
@@ -35,6 +36,7 @@ const AnswerInput = styled(Input)`
 `;
 
 function Add() {
+  const history = useHistory();
   const [question, setQuestion] = React.useState('');
   const [firstAnswer, setFirstAnswer] = React.useState('');
   const [secondAnswer, setSecondAnswer] = React.useState('');
@@ -64,7 +66,8 @@ function Add() {
       }
     );
     const createdPoll = await response.json();
-    alert(`Created poll with the id ${createdPoll.id}`);
+    console.log(createdPoll);
+    history.push(`polls/${createdPoll.id}/vote/`);
   }
 
   return (
@@ -102,9 +105,7 @@ function Add() {
             setThirdAnswer(event.target.value);
           }}
         />
-        <Button>
-          <Link to="/polls/:pollId/Vote">Submit your Poll</Link>
-        </Button>
+        <Button>Submit your Poll</Button>
       </Form>
     </Card>
   );
