@@ -1,5 +1,6 @@
-.answers,
-h2 {
+import styled from '@emotion/styled';
+
+const Answers = styled.div`
   width: 60%;
   height: 30px;
   margin: 10px;
@@ -8,11 +9,8 @@ h2 {
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid white;
-}
-
-.answers {
   text-align: center;
   justify-content: center;
   color: white;
-  align-items: center;
-}
+`;
+export default Answers;

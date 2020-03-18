@@ -1,18 +1,23 @@
 import React from 'react';
-import Header from './components/Header';
-import './App.css';
+import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 import Add from './pages/Add';
 import Vote from './pages/Vote';
 import Result from './pages/Result';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from '@emotion/styled';
+
+const Main = styled.main`
+  display: flex;
+  margin: 0;
+  justify-content: center;
+`;
 
 function App() {
   return (
     <Router>
-      <Header />
-
-      <main className="main">
+      <AppHeader />
+      <Main>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -27,7 +32,7 @@ function App() {
             <Result />
           </Route>
         </Switch>
-      </main>
+      </Main>
     </Router>
   );
 }
