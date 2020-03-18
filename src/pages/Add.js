@@ -1,8 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import './Add.css';
+import styled from '@emotion/styled';
 import Button from '../components/Button';
+import Form from '../components/Form';
+
+const Input = styled.input`
+  margin-bottom: 10px;
+`;
+
+const QuestionInput = styled(Input)`
+  border-bottom: 1px solid white;
+  border: none;
+  padding: 6px 10px;
+  margin: 10px;
+  color: white;
+  background: none;
+  text-transform: uppercase;
+  &::placeholder {
+    color: white;
+  }
+`;
+
+const AnswerInput = styled(Input)`
+  border-bottom: 1px solid white;
+  border: none;
+  padding: 6px 10px;
+  background: none;
+  border-bottom: 1px solid white;
+  border-radius: 20px;
+  &::placeholder {
+    color: white;
+  }
+`;
 
 function Add() {
   const [question, setQuestion] = React.useState('');
@@ -17,7 +47,8 @@ function Add() {
       question: question,
       firstAnswer: firstAnswer,
       secondAnswer: secondAnswer,
-      thirdAnswer: thirdAnswer
+      thirdAnswer: thirdAnswer,
+      votes: []
     };
 
     const response = await fetch(
@@ -38,38 +69,34 @@ function Add() {
 
   return (
     <Card>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          className="form__input form__input-question"
+      <Form onSubmit={handleSubmit}>
+        <QuestionInput
           type="text"
-          placeholder="Whats your Question?"
+          placeholder="Enter question"
           value={question}
           onChange={event => {
             setQuestion(event.target.value);
           }}
         />
-        <input
-          className="form__input form__input-answer"
+        <AnswerInput
           type="text"
-          placeholder="Fill in your first choice"
+          placeholder="First answer"
           value={firstAnswer}
           onChange={event => {
             setFirstAnswer(event.target.value);
           }}
         />
-        <input
-          className="form__input form__input-answer"
+        <AnswerInput
           type="text"
-          placeholder="Fill in your second choice"
+          placeholder="Second answer"
           value={secondAnswer}
           onChange={event => {
             setSecondAnswer(event.target.value);
           }}
         />
-        <input
-          className="form__input form__input-answer"
+        <AnswerInput
           type="text"
-          placeholder="Fill in your third choice"
+          placeholder="Third answer"
           value={thirdAnswer}
           onChange={event => {
             setThirdAnswer(event.target.value);
@@ -78,7 +105,7 @@ function Add() {
         <Button>
           <Link to="/polls/:pollId/Vote">Submit your Poll</Link>
         </Button>
-      </form>
+      </Form>
     </Card>
   );
 }

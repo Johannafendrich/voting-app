@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom';
 import Card from '../components/Card';
-import './Vote.css';
 import Button from '../components/Button';
+import Form from '../components/Form';
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
@@ -42,7 +42,7 @@ function Vote() {
   }
   return (
     <Card>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <h2>{poll?.question}</h2>
         <label>
           <input
@@ -75,7 +75,7 @@ function Vote() {
           {poll?.thirdAnswer}
         </label>
         <button>Vote</button>
-      </form>
+      </Form>
       <Button>
         <Link to="/polls/:pollId">Show the Result</Link>
       </Button>
