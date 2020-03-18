@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Form from '../components/Form';
+import RadioInput from '../components/RadioButtonsInput';
 
 const POLLS_API_URL =
   process.env.REACT_APP_POLLS_API ||
@@ -44,41 +45,29 @@ function Vote() {
     <Card>
       <Form onSubmit={handleSubmit}>
         <h2>{poll?.question}</h2>
-        <label>
-          <input
-            type="radio"
-            name="answer"
-            value="firstAnswer"
-            checked={answer === 'firstAnswer'}
-            onChange={event => setAnswer(event.target.value)}
-          />
-          {poll?.firstAnswer}
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="answer"
-            value="secondAnswer"
-            checked={answer === 'secondAnswer'}
-            onChange={event => setAnswer(event.target.value)}
-          />
-          {poll?.secondAnswer}
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="answer"
-            value="thirdAnswer"
-            checked={answer === 'thirdAnswer'}
-            onChange={event => setAnswer(event.target.value)}
-          />
-          {poll?.thirdAnswer}
-        </label>
-        <button>Vote</button>
+        <RadioInput
+          checked={answer === 'firstAnswer'}
+          value="firstAnswer"
+          label={poll?.answerOne}
+          onChange={event => setAnswer(event.target.value)}
+        />
+        <RadioInput
+          checked={answer === 'secondAnswer'}
+          value="secondAnswer"
+          label={poll?.answerTwo}
+          onChange={event => setAnswer(event.target.value)}
+        />
+        <RadioInput
+          checked={answer === 'thirdAnswer'}
+          value="thirdAnswer"
+          label={poll?.answerThree}
+          onChange={event => setAnswer(event.target.value)}
+        />
+
+        <Button>
+          <Link to="/polls/:pollId">Show Result</Link>
+        </Button>
       </Form>
-      <Button>
-        <Link to="/polls/:pollId">Show the Result</Link>
-      </Button>
     </Card>
   );
 }
