@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 import styled from '@emotion/styled';
 import Button from '../components/Button';
