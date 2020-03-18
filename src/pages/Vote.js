@@ -41,32 +41,23 @@ function Vote() {
     });
     history.push(`/polls/${poll.id}`);
   }
+
+  const options = ['firstAnswer', 'secondAnswer', 'thirdAnswer'];
+
   return (
     <Card>
       <Form onSubmit={handleSubmit}>
         <h2>{poll?.question}</h2>
-        <RadioInput
-          checked={answer === 'firstAnswer'}
-          onChange={event => setAnswer(event.target.value)}
-          value="firstAnswer"
-          label={poll?.answerOne}
-          name="answer"
-        />
-        <RadioInput
-          checked={answer === 'secondAnswer'}
-          onChange={event => setAnswer(event.target.value)}
-          value="secondAnswer"
-          label={poll?.answerTwo}
-          name="answer"
-        />
-        <RadioInput
-          checked={answer === 'thirdAnswer'}
-          onChange={event => setAnswer(event.target.value)}
-          value="thirdAnswer"
-          label={poll?.answerThree}
-          name="answer"
-        />
-
+        {options.map(option => (
+          <RadioInput
+            key={option}
+            checked={answer === option}
+            onChange={event => setAnswer(event.target.value)}
+            value={option}
+            label={poll?.[option]}
+            name="answer"
+          />
+        ))}
         <Button>
           <Link to="/polls/:pollId">Show Result</Link>
         </Button>
