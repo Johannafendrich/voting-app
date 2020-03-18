@@ -6,6 +6,7 @@ import Vote from './pages/Vote';
 import Result from './pages/Result';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from '@emotion/styled';
+import GlobalStyles from './components/GlobalStyles';
 
 const Main = styled.main`
   display: flex;
@@ -16,6 +17,7 @@ const Main = styled.main`
 function App() {
   return (
     <Router>
+      <GlobalStyles />
       <AppHeader />
       <Main>
         <Switch>
