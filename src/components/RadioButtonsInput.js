@@ -12,7 +12,8 @@ const Input = styled.input`
 
 const Checkmark = styled.div`
   border-radius: 50%;
-  background: ${props => (props.checked ? '#1cfafa' : '#fff')};
+  background: ${props =>
+    props.checked ? props.theme.colors.activePrimary : '#fff'};
   height: 20px;
   width: 20px;
   margin-right: 10px;
