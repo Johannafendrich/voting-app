@@ -47,21 +47,24 @@ function Vote() {
         <h2>{poll?.question}</h2>
         <RadioInput
           checked={answer === 'firstAnswer'}
+          onChange={event => setAnswer(event.target.value)}
           value="firstAnswer"
           label={poll?.answerOne}
-          onChange={event => setAnswer(event.target.value)}
+          name="answer"
         />
         <RadioInput
           checked={answer === 'secondAnswer'}
+          onChange={event => setAnswer(event.target.value)}
           value="secondAnswer"
           label={poll?.answerTwo}
-          onChange={event => setAnswer(event.target.value)}
+          name="answer"
         />
         <RadioInput
           checked={answer === 'thirdAnswer'}
+          onChange={event => setAnswer(event.target.value)}
           value="thirdAnswer"
           label={poll?.answerThree}
-          onChange={event => setAnswer(event.target.value)}
+          name="answer"
         />
 
         <Button>
