@@ -9,6 +9,7 @@ import styled from '@emotion/styled';
 import GlobalStyles from './components/GlobalStyles';
 import { ThemeProvider } from 'emotion-theming';
 import wave from './components/themes/wave';
+import dark from './components/themes/dark';
 
 const Main = styled.main`
   display: flex;
@@ -17,11 +18,16 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [theme, setTheme] = React.useState(wave);
   return (
-    <ThemeProvider theme={wave}>
+    <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyles />
-        <AppHeader />
+        <AppHeader
+          ChangeColorButtonClick={() => {
+            setTheme(theme === wave ? dark : wave);
+          }}
+        />
         <Main>
           <Switch>
             <Route exact path="/">

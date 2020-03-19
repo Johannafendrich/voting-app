@@ -10,27 +10,26 @@ const Input = styled.input`
 `;
 
 const QuestionInput = styled(Input)`
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $props{theme.colors.textPrimary};
   border: none;
   padding: 6px 10px;
   margin: 10px;
-  color: white;
+  color: $props{theme.colors.textPrimary};
   background: none;
   text-transform: uppercase;
   &::placeholder {
-    color: white;
+    color: $props{theme.colors.textPrimary};
   }
 `;
 
 const AnswerInput = styled(Input)`
-  border-bottom: 1px solid white;
   border: none;
   padding: 6px 10px;
   background: none;
   border-bottom: 1px solid white;
   border-radius: 20px;
   &::placeholder {
-    color: white;
+    color: $props{theme.colors.textPrimary};
   }
 `;
 

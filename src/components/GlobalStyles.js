@@ -4,7 +4,7 @@ import { Global, css } from '@emotion/core';
 function GlobalStyles() {
   return (
     <Global
-      styles={css`
+      styles={theme => css`
         body {
           mmargin: 0;
           height: 100vh;

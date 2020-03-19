@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 
 const Button = styled.button`
-  background: white;
+  background: $props{theme.colors.backgroundCard};
   border-radius: 30px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 5px 20px;
   margin-top: 20px;
+  color:$props{theme.colors.textPrimary};
   &: a {
     text-decoration: none;
   }
