@@ -1,6 +1,8 @@
 const wave = {
   colors: {
-    activePrimary: '#1cfafa'
+    textPrimary: '#eee',
+    activePrimary: '#1cfafa',
+    backgroundCard: '#ccfcf8; opacity:0.6'
   }
 };
 
