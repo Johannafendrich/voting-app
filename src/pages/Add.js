@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Button from '../components/Button';
 import Form from '../components/Form';
 import { useHistory } from 'react-router-dom';
+import { postPoll } from '../api/polls';
 
 const Input = styled.input`
   margin-bottom: 10px;
@@ -50,22 +51,8 @@ function Add() {
       thirdAnswer: thirdAnswer,
       votes: []
     };
-
-    const response = await fetch(
-      process.env.REACT_APP_POLLS_API ||
-        'https://my-json-server.typicode.com/Johannafendrich/voting-app/polls',
-
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(poll)
-      }
-    );
-    const createdPoll = await response.json();
-    console.log(createdPoll);
-    history.push(`polls/${createdPoll.id}/vote/`);
+    const createdPoll = await postPoll(poll);
+    history.push(`/polls${createdPoll.id}/vote/`);
   }
 
   return (
