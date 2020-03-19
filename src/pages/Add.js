@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import { useHistory } from 'react-router-dom';
 import { postPoll } from '../api/polls';
+const [isLoading, setIsLoading] = React.useState(false);
 
 const Input = styled.input`
   margin-bottom: 10px;
@@ -43,6 +44,7 @@ function Add() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    setIsLoading(true);
 
     const poll = {
       question: question,
@@ -90,7 +92,7 @@ function Add() {
             setThirdAnswer(event.target.value);
           }}
         />
-        <Button>Submit your Poll</Button>
+        <Button disabled={isLoading}>Submit your Poll</Button>
       </Form>
     </Card>
   );
