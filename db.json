@@ -31,6 +31,13 @@
       "thirdAnswer": "Voting",
       "id": 4,
       "votes": []
+    },
+    {
+      "question": "Do you like music?",
+      "firstAnswer": "Yes",
+      "secondAnswer": "No ",
+      "thirdAnswer": "It' my life",
+      "votes": ["thirdAnswer"]
     }
   ]
 }

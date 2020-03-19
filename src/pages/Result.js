@@ -4,22 +4,18 @@ import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Form from '../components/Form';
-
-const POLLS_API_URL =
-  process.env.REACT_APP_POLLS_API ||
-  'https://my-json-server.typicode.com/Johannafendrich/voting-app/polls';
+import { getPoll } from '../api/polls';
 
 function Result() {
   const { pollId } = useParams();
   const [poll, setPoll] = React.useState(null);
 
   React.useEffect(() => {
-    async function getPoll() {
-      const response = await fetch(`${POLLS_API_URL}/${pollId}`);
-      const poll = await response.json();
+    async function collectPoll() {
+      const poll = await getPoll(pollId);
       setPoll(poll);
     }
-    getPoll();
+    collectPoll();
   }, [pollId]);
 
   const firstAnswerVotes = poll?.votes.filter(vote => vote === 'firstAnswer')
