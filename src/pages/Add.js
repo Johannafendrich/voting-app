@@ -52,7 +52,7 @@ function Add() {
       votes: []
     };
     const createdPoll = await postPoll(poll);
-    history.push(`/polls${createdPoll.id}/vote/`);
+    history.push(`/polls/${createdPoll.id}/vote/`);
   }
 
   return (
