@@ -6,11 +6,7 @@
       "secondAnswer": "Great",
       "thirdAnswer": "Awesome",
       "id": 1,
-      "votes": [
-        "firstAnswer",
-        "secondAnswer",
-        "thirdAnswer"
-      ]
+      "votes": ["firstAnswer", "secondAnswer", "thirdAnswer"]
     },
     {
       "question": "Where you want to go?",
@@ -41,10 +37,7 @@
       "firstAnswer": "Yes",
       "secondAnswer": "No ",
       "thirdAnswer": "It' my life",
-      "votes": [
-        "thirdAnswer"
-      ],
-      "id": 5
+      "votes": ["thirdAnswer"]
     }
   ]
 }
