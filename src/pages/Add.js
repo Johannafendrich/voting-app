@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import { useHistory } from 'react-router-dom';
 import { postPoll } from '../api/polls';
-const [isLoading, setIsLoading] = React.useState(false);
+import Loading from '../components/Loading';
 
 const Input = styled.input`
   margin-bottom: 10px;
@@ -41,6 +41,7 @@ function Add() {
   const [firstAnswer, setFirstAnswer] = React.useState('');
   const [secondAnswer, setSecondAnswer] = React.useState('');
   const [thirdAnswer, setThirdAnswer] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -53,10 +54,14 @@ function Add() {
       thirdAnswer: thirdAnswer,
       votes: []
     };
+    setIsLoading(false);
     const createdPoll = await postPoll(poll);
-    history.push(`/polls/${createdPoll.id}/vote/`);
+    history.push(`/polls/${createdPoll.id}/vote`);
   }
 
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <Card>
       <Form onSubmit={handleSubmit}>

@@ -5,20 +5,22 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import RadioInput from '../components/RadioButtonsInput';
 import { patchPoll, getPoll } from '../api/polls';
-const [isLoadingPatchPoll, setIsLoadingPatchPoll] = React.useState(false);
-const [isLoadingGetPoll, setIsLoadingGetPoll] = React.useState(true);
+import Loading from '../components/Loading';
 
 function Vote() {
   const { pollId } = useParams();
   const history = useHistory();
   const [poll, setPoll] = React.useState(null);
   const [answer, setAnswer] = React.useState(null);
+  const [isLoadingPatchPoll, setIsLoadingPatchPoll] = React.useState(false);
+  const [isLoadingGetPoll, setIsLoadingGetPoll] = React.useState(true);
 
   React.useEffect(() => {
     async function collectPoll() {
+      setIsLoadingGetPoll(true);
       const poll = await getPoll(pollId);
       setPoll(poll);
-      setIsLoadingGetPoll(true);
+      setIsLoadingGetPoll(false);
     }
     collectPoll();
   }, [pollId]);
@@ -34,7 +36,7 @@ function Vote() {
     history.push(`/polls/${poll.id}`);
   }
   if (isLoadingGetPoll) {
-    return <div>Loading..</div>;
+    return <Loading />;
   }
 
   const options = ['firstAnswer', 'secondAnswer', 'thirdAnswer'];
