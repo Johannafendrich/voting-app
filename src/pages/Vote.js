@@ -39,6 +39,10 @@ function Vote() {
     return <Loading />;
   }
 
+  if (isLoadingGetPoll) {
+    return <Loading />;
+  }
+
   const options = ['firstAnswer', 'secondAnswer', 'thirdAnswer'];
 
   return (

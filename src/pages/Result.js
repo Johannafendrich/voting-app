@@ -22,12 +22,16 @@ function Result() {
     collectPoll();
   }, [pollId]);
 
-  const firstAnswerVotes = poll?.votes.filter(vote => vote === 'firstAnswer')
-    .length;
-  const secondAnswerVotes = poll?.votes.filter(vote => vote === 'secondAnswer')
-    .length;
-  const thirdAnswerVotes = poll?.votes.filter(vote => vote === 'thirdAnswer')
-    .length;
+  const firstAnswerVotes =
+    poll?.votes.filter(vote => vote === 'firstAnswer').length || 0;
+  const secondAnswerVotes =
+    poll?.votes.filter(vote => vote === 'secondAnswer').length || 0;
+  const thirdAnswerVotes =
+    poll?.votes.filter(vote => vote === 'thirdAnswer').length || 0;
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   if (isLoading) {
     return <Loading />;

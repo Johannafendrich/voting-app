@@ -1,31 +1,76 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const Heart = styled.div`
+
+const Ellipsis = styled.div`
+
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
-  transform: rotate(45deg);
-  transform-origin: 40px 40px;
 
   div {
-    top: 32px;
-    left: 32px;
     position: absolute;
-    width: 32px;
-    height: 32px;
-    background: #fff;
-    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #1cfafa;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  div:nth-of-type(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  div:nth-of-type(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  div:nth-of-type(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  div:nth-of-type(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+
   }
 `;
 
 const Loading = () => {
   return (
-    <Heart>
+
+    <Ellipsis>
       <div />
       <div />
-    </Heart>
+      <div />
+      <div />
+    </Ellipsis>
+
   );
 };
 
