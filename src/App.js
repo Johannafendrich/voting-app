@@ -18,14 +18,14 @@ const Main = styled.main`
 `;
 
 function App() {
-  const [theme, setTheme] = React.useState(wave);
+  const [theme, setTheme] = React.useState(dark);
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyles />
         <AppHeader
           ChangeColorButtonClick={() => {
-            setTheme(theme === wave ? dark : wave);
+            setTheme(theme === dark ? wave : dark);
           }}
         />
         <Main>
